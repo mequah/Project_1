@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             if (inputHeight.isEmpty()) {
                 isEmptyFields = true
-                edtLength.error = "Field tidak boleh kosong"
+                edtHeight.error = "Field tidak boleh kosong"
             }
             if (!isEmptyFields) {
                 val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
@@ -59,5 +59,4 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-
-   }
+}
