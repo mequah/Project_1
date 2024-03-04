@@ -17,13 +17,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val btnMoveActivity: Button = findViewById(R.id.btn_move_activity)
         btnMoveActivity.setOnClickListener(this)
 
+        val btnMoveDataActivity: Button = findViewById(R.id.btn_move_activity_data)
+        btnMoveDataActivity.setOnClickListener(this)
+
     }
 
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.btn_move_activity -> {
-            val  moveIntent = Intent(this@MainActivity, MainActivity2::class.java)
+            val  moveIntent = Intent(this@MainActivity, MoveActivity::class.java)
                 startActivities(arrayOf(moveIntent))
+            }
+            R.id.btn_move_activity_data -> {
+                val moveWithDataIntent = Intent(this@MainActivity, MoveWithDataActivity::class.java)
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "Alfisah")
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 22)
+                startActivity(moveWithDataIntent)
+
             }
         }
 
